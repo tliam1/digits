@@ -47,3 +47,7 @@ body .navbar {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+.navbar a.nav-link.active {
+  color: var(--matr-navbar-highlight-text);
+}
