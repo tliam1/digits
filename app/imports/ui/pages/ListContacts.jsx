@@ -2,16 +2,14 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-// import { Stuffs } from '../../api/stuff/Stuff';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Contact from '../components/Contact';
 import { Contacts } from '../../api/contact/contact';
-// import StuffItem from '../components/StuffItem';
-// import StuffItem from '../components/StuffItem';
-// import LoadingSpinner from '../components/LoadingSpinner';
+import { Notes } from '../../api/contact/Notes';
+
 const ListContacts = () => {
 
-  const { ready, contacts } = useTracker(() => {
+  const { ready, contacts, notes } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
@@ -20,10 +18,17 @@ const ListContacts = () => {
     const rdy = subscription.ready();
     // Get the Stuff documents
     const contactItems = Contacts.collection.find({}).fetch();
-    console.log(contactItems);
+
+    const subscription2 = Meteor.subscribe(Notes.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy2 = subscription2.ready();
+    // Get the Stuff documents
+    const notesItems = Notes.collection.find({}).fetch();
+
     return {
       contacts: contactItems,
-      ready: rdy,
+      notes: notesItems,
+      ready: (rdy && rdy2),
     };
   }, []);
   return (ready ? (
@@ -35,7 +40,7 @@ const ListContacts = () => {
           </Col>
           <Col>
             <Row xs={1} md={2} lg={3} className="g-4">
-              {contacts.map((contact) => (<Col key={contact._id}><Contact contact={contact} /></Col>))}
+              {contacts.map((contact) => (<Col key={contact._id}><Contact contact={contact} notes={notes.filter(note => (note.contactID === contact._id))} /> </Col>))}
             </Row>
           </Col>
         </Col>
