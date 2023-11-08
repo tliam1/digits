@@ -1,5 +1,4 @@
-![](https://github.com/tliam1/digits/blob/cleanup/doc/Digits-HomePage.JPG)
-
+<img src="doc/Digits-HomePage.JPG">
 
 ## Installation
 
