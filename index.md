@@ -1,4 +1,4 @@
-![](https://github.com/tliam1/digits/doc/Digits-HomePage.JPG)
+![](https://github.com/tliam1/digits/blob/cleanup/doc/Digits-HomePage.JPG)
 
 
 meteor-application-template-react is a sample Meteor 2.9 application that illustrates: 
