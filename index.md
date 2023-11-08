@@ -124,7 +124,7 @@ The application implements a simple CRUD application for managing "contacts", wh
 
 When you retrieve the app at http://localhost:3000, this is what should be displayed if you are signed in, otherwise, the only available option is to sign in:
 
-![](https://github.com/tliam1/digits/blob/cleanup/doc/Digits-HomePage.JPG)
+<img src="doc/Digits-HomePage.JPG">
 
 #### Login page
 
@@ -138,13 +138,13 @@ Alternatively, clicking on the Login link, then on the Sign-Up menu item display
 
 After logging in, here is the page that allows you to add a new Contact:
 
-![](https://github.com/tliam1/digits/blob/cleanup/doc/Add-Contact-Page.JPG)
+<img src="doc/Add-Contact-Page.JPG">
 
 #### List Contacts page
 
 After logging in, here is the page that allows you to list all the contacts you have created:
 
-![](https://github.com/tliam1/digits/blob/cleanup/doc/List-Contacts-Page.JPG)
+<img src="doc/List-Contacts-Page.JPG">
 
 You click the "Edit" link to go to the Edit Contacts page.
 
@@ -156,6 +156,6 @@ After clicking on the "Edit" link associated with an item, the displayed page is
 
 To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Contacts by all of the users:
 
-![](https://github.com/tliam1/digits/blob/cleanup/doc/Admin-List-Contacts.JPG)
+<img src="doc/Admin-List-Contacts.JPG">
 
 Note that non-admin users cannot get to this page, even if they type in the URL by hand.
