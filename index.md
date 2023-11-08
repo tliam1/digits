@@ -94,7 +94,7 @@ client/
 
 imports/
   api/           # Define collections
-    stuff/       # The Stuffs collection definition
+    contact/     # The Contacts collection definition
   startup/       # Define code to run when system starts up (client-only, server-only, both)
     client/
     server/
@@ -123,63 +123,40 @@ The application implements a simple CRUD application for managing "contacts", wh
 
 #### Landing page
 
-When you retrieve the app at http://localhost:3000, this is what should be displayed:
+When you retrieve the app at http://localhost:3000, this is what should be displayed if you are signed in, otherwise, the only available option is to sign in:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/landing-page.png)
-
-The next step is to use the Login menu to either Login to an existing account or register a new account.
+![](https://github.com/tliam1/digits/blob/cleanup/doc/Digits-HomePage.JPG)
 
 #### Login page
 
-Clicking on the Login link, then on the Sign In menu item displays this page:
-
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/signin-page.png)
+Clicking on the Login link, then on the Sign In menu leads you to a page prompting the user for an email and password, as well as a small submit button.
 
 #### Register page
 
-Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
+Alternatively, clicking on the Login link, then on the Sign-Up menu item displays a page identical to the login page, but instead will register your email and password into the database.
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/register-page.png)
+#### Add Contact page
 
+After logging in, here is the page that allows you to add a new Contact:
 
-#### Landing (after Login) page, non-Admin user
+![](https://github.com/tliam1/digits/blob/cleanup/doc/Add-Contact-Page.JPG)
 
-Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
+#### List Contacts page
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/landing-after-login-page.png)
+After logging in, here is the page that allows you to list all the contacts you have created:
 
-You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
+![](https://github.com/tliam1/digits/blob/cleanup/doc/List-Contacts-Page.JPG)
 
-#### Add Stuff page
+You click the "Edit" link to go to the Edit Contacts page.
 
-After logging in, here is the page that allows you to add new Stuff:
+#### Edit Contact page
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/add-stuff-page.png)
+After clicking on the "Edit" link associated with an item, the displayed page is identical to the Add Contact page, but with each box filled in and can be edited.
 
-#### List Stuff page
+#### Admin page (list all users contacts)
 
-After logging in, here is the page that allows you to list all the Stuff you have created:
+To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Contacts by all of the users:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/list-stuff-page.png)
-
-You click the "Edit" link to go to the Edit Stuff page, shown next.
-
-#### Edit Stuff page
-
-After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
-
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/edit-stuff-page.png)
-
-#### Landing (after Login), Admin user
-
-You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
-
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/admin-landing-page.png)
-
-#### Admin page (list all users stuff)
-
-To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
-
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/admin-list-stuff-page.png)
+![](https://github.com/tliam1/digits/blob/cleanup/doc/Admin-List-Contacts.JPG)
 
 Note that non-admin users cannot get to this page, even if they type in the URL by hand.
